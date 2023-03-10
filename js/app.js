@@ -38,7 +38,6 @@ const displayProducts = (products) => {
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
       <h2>Price: $ ${product.price}</h2>
-
       <button onclick="showProductDetails(${product.id})" id="details-btn"    data-bs-toggle="modal"
       data-bs-target="#exampleModal" class="btn btn-outline-secondary mb-2 rounded-1 mt-1">Details</button>
       
@@ -47,8 +46,6 @@ const displayProducts = (products) => {
       document.getElementById('all-products').appendChild(div);
    }
 };
-
-
 let count = 0;
 
 const addToCart = (id, price) => {
@@ -101,15 +98,15 @@ const updateTaxAndCharge = () => {
       setInnerText('delivery-charge', 60);
       setInnerText('total-tax', (priceConverted * 0.4).toFixed(2));
    }
-  else if (priceConverted > 400) {
+   if (priceConverted > 400) {
       setInnerText('delivery-charge', 50);
       setInnerText('total-tax', (priceConverted * 0.3).toFixed(2));
    }
-  else if (priceConverted > 200) {
+   if (priceConverted > 200) {
       setInnerText('delivery-charge', 30);
       setInnerText('total-tax', (priceConverted * 0.2).toFixed(2));
    }
- 
+
 
 };
 
